@@ -1,0 +1,459 @@
+/* Base Styles */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    background: url('https://i.im.ge/2024/11/04/kzUxTS.downloaded-image-1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+/* Navigation Styles */
+nav {
+    background-color: rgba(22, 33, 62, 0.9);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00adb5;
+    text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(0, 173, 181, 0.8);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 2rem;
+    gap: 2rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00adb5;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #00adb5;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+    background-color: #00adb5;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+}
+
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(22, 33, 62, 0.95);
+        flex-direction: column;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+}
+/* Main Container Styles */
+.container {
+    max-width: 800px;
+    margin: 100px auto 40px;
+    padding: 20px;
+}
+
+/* Payment Form Modal */
+.modal {
+    background: rgba(22, 33, 62, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.modal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 173, 181, 0.4);
+}
+
+/* Custom scrollbar */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: rgba(15, 52, 96, 0.8);
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #00adb5;
+    border-radius: 4px;
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Payment Options */
+.payment--options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment--options button {
+    background: rgba(15, 52, 96, 0.8);
+    border: 2px solid transparent;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.payment--options button:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 173, 181, 0.2);
+    border-color: #00adb5;
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.3);
+}
+
+.payment--options button.active {
+    background: rgba(0, 173, 181, 0.2);
+    border-color: #00adb5;
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.4);
+}
+
+/* Tooltip for payment options */
+.payment--options button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 173, 181, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Input Styles */
+.input_container {
+    margin-bottom: 15px;
+}
+
+.input_label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00adb5;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input_field {
+    width: 100%;
+    padding: 12px;
+    background: rgba(15, 52, 96, 0.8);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.input_field:focus {
+    outline: none;
+    border-color: #00adb5;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.3);
+}
+
+/* Error state for inputs */
+.input_field.error {
+    border-color: #ff3860;
+    box-shadow: 0 0 10px rgba(255, 56, 96, 0.3);
+}
+
+/* Error message */
+.error-message {
+    color: #ff3860;
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+/* Split Layout */
+.split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+/* Purchase Button */
+.purchase--btn {
+    background: linear-gradient(45deg, #00adb5, #0f3460);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.purchase--btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+}
+
+/* Disable button state */
+.purchase--btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading state for button */
+.purchase--btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.purchase--btn.loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+/* Payment Type Sections */
+.payment-type {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.payment-type.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* [Previous CSS remains the same until popup styles] */
+
+/* Success Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background: rgba(22, 33, 62, 0.95);
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 173, 181, 0.4);
+    animation: popupAppear 0.5s ease-out;
+}
+
+.success-animation {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #00adb5;
+    stroke-miterlimit: 10;
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.4);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #00adb5;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00adb5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #008c94;
+    transform: translateY(-2px);
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0 0 0 100px #00adb5;
+    }
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print styles */
+@media print {
+    .modal {
+        background: white;
+        color: black;
+        box-shadow: none;
+    }
+    
+    .purchase--btn,
+    .payment--options {
+        display: none;
+    }
+}
+
+/* Focus visible outline for accessibility */
+.input_field:focus-visible,
+.purchase--btn:focus-visible,
+.payment--options button:focus-visible {
+    outline: 2px solid #00adb5;
+    outline-offset: 2px;
+}

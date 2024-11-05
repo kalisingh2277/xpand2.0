@@ -1,0 +1,344 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: url('https://i.im.ge/2024/11/04/kzUxTS.downloaded-image-1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: rgba(22, 33, 62, 0.9);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00adb5;
+    text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #00adb5;
+}
+
+/* Content Styles */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.feedback-container {
+    background-color: rgba(22, 33, 62, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-info {
+    margin-bottom: 2rem;
+}
+
+.feedback-info h2 {
+    color: #00adb5;
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 2px solid #00adb5;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #ffffff;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -1.2rem;
+    font-size: 0.8rem;
+    color: #00adb5;
+}
+
+/* Rating Styles */
+.rating-group {
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stars i {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin: 0 0.2rem;
+}
+
+.stars i.active,
+.stars i:hover {
+    color: #ffd700;
+}
+
+/* Submit Button Styles */
+.submit-btn {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-btn:hover {
+    background-color: #008c94;
+    transform: translateY(-2px);
+}
+
+.submit-btn i {
+    margin-left: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: rgba(22, 33, 62, 0.9);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.3);
+}
+
+.close-btn {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.close-btn:hover {
+    background-color: #008c94;
+}
+
+/* Success Checkmark Animation */
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid #00adb5;
+}
+
+.check-icon::before {
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+.check-icon::after {
+    top: 0;
+    left: 30px;
+    width: 60px;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    animation: rotate-circle 4.25s ease-in;
+}
+
+.check-icon::before, .check-icon::after {
+    content: '';
+    height: 100px;
+    position: absolute;
+    background: rgba(22, 33, 62, 0.9);
+    transform: rotate(-45deg);
+}
+
+.check-icon .icon-line {
+    height: 5px;
+    background-color: #00adb5;
+    display: block;
+     border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.check-icon .icon-line.line-tip {
+    top: 46px;
+    left: 38px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s;
+}
+
+.check-icon .icon-line.line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s;
+}
+
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes icon-line-tip {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 25px;
+    }
+}
+
+@keyframes icon-line-long {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 47px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .feedback-container {
+        padding: 1.5rem;
+    }
+    .feedback-info h2 {
+        font-size: 1.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem;
+    }
+    .submit-btn {
+        padding: 0.8rem 1.5rem;
+    }
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+}

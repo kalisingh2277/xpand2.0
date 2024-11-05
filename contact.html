@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - XPAND</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">XPAND</div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 data-aos="fade-down">Contact Us</h1>
+        <p data-aos="fade-up">We'd Love to Hear From You!</p>
+    </header>
+
+    <div class="content">
+        <div class="contact-container" data-aos="fade-up">
+            <div class="contact-info">
+                <h2><i class="fas fa-map-marker-alt"></i> Our Location</h2>
+                <p>VELLOR INSTITUTE OF TECHNOLOGY , AP</p>
+                
+                <h2><i class="fas fa-phone"></i> Phone</h2>
+                <p>+91 XXXXXXXXXX</p>
+                
+                <h2><i class="fas fa-envelope"></i> Email</h2>
+                <p>contact@xpand.com</p>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Your Message</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    
+   <!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <div class="success-checkmark">
+            <div class="check-icon">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+            </div>
+        </div>
+        <h2>Message Sent Successfully!</h2>
+        <p>We'll get back to you soon.</p>
+        <button id="close-modal" class="close-btn">Close</button>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2023 XPAND. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="contact.js"></script>
+</body>
+</html>

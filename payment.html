@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - XPAND</title>
+    <link rel="stylesheet" href="payment.css">    
+  
+</head>
+<body>
+    <nav>
+        <div class="logo">XPAND</div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="modal">
+            <form class="form" id="paymentForm">
+                <div class="input_container">
+                    <label class="input_label">Amount</label>
+                    <input class="input_field" type="number" id="amount" placeholder="Enter amount" required>
+                </div>
+
+                <div class="payment--options">
+                    <button type="button" data-type="card">Card</button>
+                    <button type="button" data-type="upi">UPI</button>
+                    <button type="button" data-type="wallet">Wallet</button>
+                    <button type="button" data-type="netbanking">Net Banking</button>
+                </div>
+
+                <div id="cardPayment" class="payment-type">
+                    <div class="input_container">
+                        <label class="input_label">Card holder full name</label>
+                        <input class="input_field" type="text" placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="input_container">
+                        <label class="input_label">Card Number</label>
+                        <input class="input_field" type="number" placeholder="0000 0000 0000 0000">
+                    </div>
+
+                    <div class="input_container">
+                        <label class="input_label">Expiry Date / CVV</label>
+                        <div class="split">
+                            <input class="input_field" type="text" placeholder="MM/YY">
+                            <input class="input_field" type="number" placeholder="CVV">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="upiPayment" class="payment-type">
+                    <div class="input_container">
+                        <label class="input_label">UPI ID</label>
+                        <input class="input_field" type="text" placeholder="Enter your UPI ID">
+                    </div>
+                    <div class="input_container">
+                        <label class="input_label">Phone Number</label>
+                        <input class="input_field" type="tel" placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <div id="walletPayment" class="payment-type">
+                    <div class="input_container">
+                        <label class="input_label">Wallet Address</label>
+                        <input class="input_field" type="text" placeholder="Enter your wallet address">
+                    </div>
+                </div>
+
+                <!-- <div id="netbankingPayment" class="payment -type">
+                    <!-- Net Banking payment fields will go here -->
+                </div> -->
+                <div id="netbankingPayment" class="payment-type">
+                    <div class="input_container">
+                        <label class="input_label">Select Bank</label>
+                        <select class="input_field" required>
+                            <option value="">Choose your bank</option>
+                            <option value="sbi">State Bank of India</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="icici">ICICI Bank</option>
+                            <option value="axis">Axis Bank</option>
+                            <option value="pnb">Punjab National Bank</option>
+                            <option value="bob">Bank of Baroda</option>
+                            <option value="canara">Canara Bank</option>
+                            <option value="union">Union Bank</option>
+                            <option value="kotak">Kotak Mahindra Bank</option>
+                            <option value="yes">Yes Bank</option>
+                        </select>
+                    </div>
+                    <div class="input_container">
+                        <label class="input_label">Account Number</label>
+                        <input class="input_field" type="text" placeholder="Enter your account number" required>
+                    </div>
+                    <div class="input_container">
+                        <label class="input_label">IFSC Code</label>
+                        <input class="input_field" type="text" placeholder="Enter IFSC code" required>
+                    </div>
+                    <div class="input_container">
+                        <label class="input_label">Account Holder Name</label>
+                        <input class="input_field" type="text" placeholder="Enter account holder name" required>
+                    </div>
+                </div>
+
+                <button class="purchase--btn">Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const paymentForm = document.getElementById('paymentForm');
+        const paymentOptions = document.querySelectorAll('.payment--options button');
+        const paymentTypes = document.querySelectorAll('.payment-type');
+
+        paymentOptions.forEach((option) => {
+            option.addEventListener('click', () => {
+                paymentTypes.forEach((type) => {
+                    type.classList.remove('active');
+                });
+                document.getElementById(option.dataset.type + 'Payment').classList.add('active');
+            });
+        });
+    </script>
+   <div id="successPopup" class="popup">
+    <div class="popup-content">
+        <div class="success-animation">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <h2>Payment Successful!</h2>
+        <p>Your transaction has been completed successfully.</p>
+        <button id="closePopup" class="close-btn">Close</button>
+    </div>
+</div>
+    <script src="payment.js"></script>
+</body>
+</html>

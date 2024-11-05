@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - XPAND</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: url('https://i.im.ge/2024/11/04/kzUxTS.downloaded-image-1.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: rgba(22, 33, 62, 0.9);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        nav:hover {
+            background-color: rgba(22, 33, 62, 1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00adb5;
+            text-shadow: 0 0 10px #00adb5;
+        }
+        header {
+            text-align: center;
+            margin-top: 60px; /* Space for fixed nav */
+            padding: 2rem 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00adb5;
+            transition: all 0.3s ease;
+        }
+        h1:hover {
+            text-shadow: 0 0 10px #00adb5;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+            background: rgba(22, 33, 62, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(15, 52, 96, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        section:hover {
+            background: rgba(15, 52, 96, 0.9);
+            transform: translateY(-5px);
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #00adb5;
+            transition: all 0.3s ease;
+        }
+        h2:hover {
+            text-shadow: 0 0 10px #00adb5;
+        }
+        p {
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .service-button {
+            background-color: #00adb5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .service-button:hover {
+            transform: scale(1.05);
+            background-color: #009688;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(22, 33, 62, 0.9);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        footer:hover {
+            background-color: rgba(22, 33, 62, 1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">XPAND</div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    
+    <header>
+        <h1 data-aos="fade-down">Our Services</h1>
+        <p data-aos="fade-up">Empowering businesses with cutting-edge data solutions</p>
+    </header>
+    
+    <div class="content">
+        <section id="data-consulting" data-aos="fade-right">
+            <h2><i class="fas fa-chart-bar"></i> Data Consulting</h2>
+            <p>Our expert data consultants help businesses make informed decisions by providing actionable insights from their data.</p>
+            <button class="service-button">Learn More</button>
+        </section>
+        
+        <section id="data-analytics" data-aos="fade-left">
+            <h2><i class="fas fa-chart-line"></i> Data Analytics</h2>
+            <p>We provide advanced data analytics services to help businesses uncover hidden patterns, trends, and correlations in their data.</p>
+            <button class="service-button">Learn More</button>
+        </section>
+        
+        <section id="data-visualization" data-aos="fade-right">
+            <h2><i class="fas fa-chart-pie"></i> Data Visualization</h2>
+            <p>Our data visualization services help businesses communicate complex data insights effectively, driving better decision-making.</p>
+            <button class="service-button">Learn More</button>
+        </section>
+        
+        <section id="data-security" data-aos="fade-left">
+            <h2><i class="fas fa-lock"></i> Data Security</h2>
+            <p>We provide robust data security solutions to protect businesses from data breaches and cyber threats.</p>
+            <button class="service-button">Learn More</button>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 XPAND. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

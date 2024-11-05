@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - XPAND</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">XPAND</div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 data-aos="fade-down">Feedback</h1>
+        <p data-aos="fade-up">We Value Your Opinion!</p>
+    </header>
+
+    <div class="content">
+        <div class="feedback-container" data-aos="fade-up">
+            <div class="feedback-info">
+                <h2><i class="fas fa-comment-dots"></i> Share Your Thoughts</h2>
+                <p>Your feedback helps us improve our services and provide better experiences.</p>
+            </div>
+
+            <form id="feedback-form" class="feedback-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="feedback" name="feedback" required></textarea>
+                    <label for="feedback">Your Feedback</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="rating-group">
+                    <label>Rate your experience:</label>
+                    <div class="stars">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Submit Feedback</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-checkmark">
+                <div class="check-icon">
+                    <span class="icon-line line-tip"></span>
+                    <span class="icon-line line-long"></span>
+                </div>
+            </div>
+            <h2>Thank You for Your Feedback!</h2>
+            <p>Your opinion matters to us.</p>
+            <button id="close-modal" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 XPAND. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="feedback.js"></script>
+</body>
+</html>
